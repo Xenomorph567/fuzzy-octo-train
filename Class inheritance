@@ -1,0 +1,47 @@
+Company_name = "AutoWorld"
+
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def display_info(self):
+        # Accessing global variable
+        print(f"Company: {Company_name}, Car Brand: {self.brand}, Model: {self.model}")
+
+# Creating an object
+car1 = Car("Fords", "Mustang")
+
+# Calling the method
+car1.display_info()
+
+
+company_name = "AutoWorld"
+
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def display_info(self):
+        # Accessing global variable
+        print(f"Company: {company_name}, Car Brand: {self.brand}, Model: {self.model}")
+
+# Subclass inheriting from Car
+class ElectricCar(Car):
+    def __init__(self, brand, model, battery_capacity):
+        super().__init__(brand, model)  # Calling the constructor of the parent class
+        self.battery_capacity = battery_capacity
+    
+    def display_info(self):
+        super().display_info()  # Calling the parent class method
+        print(f"Battery Capacity: {self.battery_capacity} kWh")
+
+# Creating objects
+car1 = Car("Ford", "Mustang")
+ecar1 = ElectricCar("Tesla", "Model S", 100)
+
+# Calling methods
+car1.display_info()
+print()
+ecar1.display_info()
