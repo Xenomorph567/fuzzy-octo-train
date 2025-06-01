@@ -1,0 +1,35 @@
+import time
+import random
+
+import difflib
+sentences = {
+    "i like soccer"
+    "I like oranges"
+    "i don't like bananas"
+    "i go to school"
+    "i like games"
+    "Its May 31st"
+    "Basketball isn't fun"
+}
+
+def Ayo():
+    print("Welcome to your Typing tutor:/n")
+    sentence = random.choice(sentences)
+    print("Type this Sentence:")
+    print(f"/n>>>{sentence}/n")
+    imput("Press enter when your are ready to start the game")
+    start_time = time.time()
+    typed = input ("in begin typing:/n>>>")
+    end_time=time.time
+
+    words = len(sentence.split())
+    wpm = round((words / time_taken) + 60)
+    matcher = difflib.SequenceMatcher(None, sentence, typed)
+    accuracy = round(matcher.ratio()*100, 2)
+
+    print("?}\n ---- final Results ---")
+    print("Time taken: () seconds".format(round(time_taken, 2)))
+    print(f"Your speed: (wpm) WPM")
+    print(f"Accuracy: {accuracy}%")
+Ayo()
+          
